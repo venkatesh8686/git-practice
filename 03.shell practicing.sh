@@ -1,8 +1,9 @@
 #!/bin/bash
-echo " Please enter your name::"
+echo " Please enter your X value::"
+read -s XVALUE
 
-read -s USERNAME
-echo "username enetred is:$USERNAME"
-echo " please enter password::"
-read -s PASSWORD
-echo " password is :$PASSWORD"
+echo " please enter Y value::"
+read -s YVALUE
+
+echo "the final values is $XVALUE,$YVALUE"
+
