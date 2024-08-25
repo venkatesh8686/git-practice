@@ -5,5 +5,7 @@ read -s XVALUE
 echo " please enter Y value::"
 read -s YVALUE
 
-echo "the final values is $XVALUE,$YVALUE"
+sum=$(($XVALUE+YVALUE))
+
+echo "the final values is $sum"
 
