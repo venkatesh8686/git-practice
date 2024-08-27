@@ -1,5 +1,6 @@
 #!/bin/bash
-$1 
-$2
-$3
-echo " 1,2,3"
+venki=$1 
+venki1=$2
+venki3=$3
+
+echo "$venki,$venki1,$venki3"
