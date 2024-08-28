@@ -1,10 +1,17 @@
 #!/bin/bash
 
-NUMBER=$1
+#NUMBER=$1
 
-if [ $NUMBER -gt 20 ]
+#if [ $NUMBER -gt 20 ]
+#then
+ #  echo "given numner : $NUMBER is greater than 20"
+#else
+ #  echo "given number :$NUMBER is lessthan 20"
+#fi
+
+if (today != "saturday" | "sunday")
 then
-   echo" given numner : $NUMBER is greater than 20"
+   echo "please attend the session"
 else
-   echo " given number :$NUMBER is lessthan 20"
+   echo " don't have session"
 fi
