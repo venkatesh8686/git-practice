@@ -31,6 +31,7 @@ then
     if [ $? -ne 0 ]
     then 
         echo "mysql is not installed.. check the cmd"
+        exit 1
     else
         echp "mysql is installing"
     fi
