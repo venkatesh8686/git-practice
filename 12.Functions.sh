@@ -41,7 +41,8 @@ if [ $? -ne 0 ]
 then
     echo "mysql is ready to install is in progress"
     dnf install mysql -y
-    VALIDATION $? "installing mysql"
+    VALIDATION $? "installed is done mysql"
+    systemctl status mysql
 else
     echo "mysql is already installed"
 fi
