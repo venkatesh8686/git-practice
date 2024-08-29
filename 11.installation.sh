@@ -9,9 +9,15 @@ if [ $USERID -ne 0 ]
 then
   echo "please try with superuser"
   exit 1
-  $?
 
 fi
 
-dnf install git -y
-#echo "Status of the above step:$?"
+dnf list installed git 
+
+if [ $? -ne 0 ]
+then 
+    echo "git is not installing, Please wait git is ready to install"
+    dnf install git -y
+else
+    echo "git is allready installed"
+fi
