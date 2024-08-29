@@ -8,6 +8,8 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
   echo "please try with superuser"
+else
+  echo "installation started"
 fi
 
 dnf install git -y
