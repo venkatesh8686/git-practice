@@ -18,7 +18,7 @@ VALIDATION(){
 
 }
 
-dnf list installed git 
+dnf lists installed git 
 
 VALIDATION $?
 
