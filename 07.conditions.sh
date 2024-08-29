@@ -9,9 +9,9 @@
  #  echo "given number :$NUMBER is lessthan 20"
 #fi
 
-if (today != "saturday" | "sunday")
-then
-   echo "please attend the session"
-else
-   echo " don't have session"
-fi
+# if [ today -ne "saturday" or "sunday" ]
+# then
+#    echo "please attend the session"
+# else
+#    echo " don't have session"
+# fi
