@@ -45,7 +45,8 @@ then
     echo "mysql is ready to install is in progress"
     dnf install mysql -y
     VALIDATION $? "installed is done mysql"
-    systemctl status mysql
+    systemctl start mysql $G
+    systemctl status mysql $G
 else
     echo "mysql is already installed"
 fi
