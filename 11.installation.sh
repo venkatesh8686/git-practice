@@ -9,7 +9,7 @@ if [ $USERID -ne 0 ]
 then
   echo "please try with superuser"
   exit 1
-  
+  $?
 
 fi
 
