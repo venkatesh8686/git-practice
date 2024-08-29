@@ -9,3 +9,5 @@ if [ $USERID -ne 0 ]
 then
   echo "please try with superuser"
 fi
+
+dnf install git -y
