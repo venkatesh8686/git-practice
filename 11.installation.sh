@@ -13,3 +13,4 @@ else
 fi
 
 dnf install git -y
+echo "Status of the above step:$?"
