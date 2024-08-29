@@ -33,7 +33,7 @@ then
         echo "mysql is not installed.. check the cmd"
         exit 1
     else
-        echp "mysql is installing"
+        echo "mysql is installing"
     fi
 else
     echo "mysql is already installed"
