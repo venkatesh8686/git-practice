@@ -34,5 +34,6 @@ VALIDATION(){
 for packages in $@
 do
     echo $packages
+    echo " this is line packages $?"
 done
 
