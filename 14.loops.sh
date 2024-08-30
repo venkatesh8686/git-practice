@@ -33,7 +33,7 @@ VALIDATION(){
 
 for packages in $@
 do
-    echo $packages
+    dnf list installed $packages
     if [ $? -ne 0 ]
     then
         echo "$packages not installed .. is started installing"
