@@ -17,7 +17,7 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-  echo -e "$R please run this script with root privallages" &>> $LOG_FILES
+  echo -e "$R please run this script with root privallages" | tee -a $LOG_FILES
   exit 1
 
 fi
@@ -27,17 +27,17 @@ VALIDATION(){
     then 
         echo "$R $2 is.. .failed.. check the cmd " &>> $LOG_FILES
     else
-        echo "$G $2.. is installing"
+        echo "$G $2.. is installing" | tee -a $LOG_FILES
     fi
 }
 
 USAGE(){
     
-    echo -e "$R USAGE:: sudo sh 15-redirectors.sh package1,package2.. $N"
+    echo -e "$R USAGE:: sudo sh 15-redirectors.sh package1,package2.. $N" | tee -a $LOG_FILES
     exit 1 
 }
 
-echo "Shell scrtiping started working:: $(date)"
+echo "Shell scrtiping started working:: $(date)" | tee -a $LOG_FILES
 
 if [ $# -eq 0 ]
 then
@@ -49,11 +49,11 @@ do
     dnf list installed $packages &>> $LOG_FILES
     if [ $? -ne 0 ]
     then
-        echo "$packages not installed .. is started installing" &>> $LOG_FILES
+        echo "$packages not installed .. is started installing" | tee -a $LOG_FILES
         dnf install -y $packages
         VALIDATION $? "installing $packages"
     else
-        echo -e "$R $packages is already installed nothing to do" &>> $LOG_FILES
+        echo -e "$R $packages is already installed nothing to do" | tee -a $LOG_FILES
     fi
 
 done
