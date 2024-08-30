@@ -1,8 +1,8 @@
 #!/bin/bash
 
 LOGS_FOLDER="/var/log/shell-scripting"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
-TIME_STAMP=$(Date+%y-%m-%d-%H-%m-%s)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1 ) &>> $LOG_FILES
+TIME_STAMP=$(Date+%y-%m-%d-%H-%m-%s) &>> $LOG_FILES
 LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME/$TIME_STAMP"
 mkdir -p $LOG_FILES 
 
