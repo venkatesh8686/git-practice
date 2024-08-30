@@ -36,7 +36,7 @@ do
     echo $packages
     if [ $? -ne 0 ]
     then
-        echo "$packges not installed .. is started installing"
+        echo "$packages not installed .. is started installing"
         dnf install -y $packages
         VALIDATION $? "installing $packages"
     else
