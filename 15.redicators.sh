@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# G="\e[32m"
+LOGS_FOLDER="/var/log/shell-scripting"
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1 )
+TIME_STAMP=$(Date+%y-%m-%d-%H-%m-%s)
+LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME/$TIME_STAMP"
+mkdir -p $LOG_FILES 
 
-# for i in {0..100}
-# do
-#     echo "this is i value : $i" $G 
-# done
 
 USERID=$(id -u)
 
@@ -17,7 +17,7 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-  echo "please try with superuser"
+  echo "$R please run this script with root privallages" &>> $LOG_FILES
   exit 1
 
 fi
@@ -32,6 +32,7 @@ VALIDATION(){
 
 }
 
+
 for packages in $@
 do
     dnf list installed $packages
@@ -45,4 +46,3 @@ do
     fi
 
 done
-
