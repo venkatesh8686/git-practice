@@ -25,15 +25,22 @@ fi
 VALIDATION(){
     if [ $1 -ne 0 ]
     then 
-        echo "$2 is..$R failed.. check the cmd $N" &>> $LOG_FILES
+        echo "$R $2 is.. .failed.. check the cmd " &>> $LOG_FILES
     else
-        echo "$2.. is installing $G"
+        echo "$G $2.. is installing"
     fi
-
 }
 
-echo "Running the script"
+USAGE(){
+    
+    echo -e "$R USAGE:: sudo sh 15-redirectors.sh package1,package2.. $N"
+    exit 1 
+}
 
+if [ $# -eq 0 ]
+then
+    USAGE
+fi
 for packages in $@
 do
     dnf list installed $packages &>> $LOG_FILES
@@ -43,7 +50,7 @@ do
         dnf install -y $packages
         VALIDATION $? "installing $packages"
     else
-        echo -e -"$packages is already installed nothing to do"&>> $LOG_FILES
+        echo -e "$R $packages is already installed nothing to do" &>> $LOG_FILES
     fi
 
 done
