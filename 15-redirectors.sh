@@ -37,10 +37,13 @@ USAGE(){
     exit 1 
 }
 
+echo "Shell scrtiping started working:: $(date)"
+
 if [ $# -eq 0 ]
 then
     USAGE
 fi
+
 for packages in $@
 do
     dnf list installed $packages &>> $LOG_FILES
