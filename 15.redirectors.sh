@@ -1,8 +1,8 @@
 #!/bin/bash
 
 LOGS_FOLDER="/var/log/shell-scripting"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1) &>> $LOG_FILES
-TIME_STAMP=$(Date+%y-%m-%d-%H-%m-%s) &>> $LOG_FILES
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1) 
+TIME_STAMP=$(Date+%y-%m-%d-%H-%m-%s)
 LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME/$TIME_STAMP.log"
 mkdir -p $LOGS_FOLDER 
 
@@ -33,16 +33,16 @@ VALIDATION(){
 }
 
 
-for packages in $@
-do
-    dnf list installed $packages
-    if [ $? -ne 0 ]
-    then
-        echo "$packages not installed .. is started installing"
-        dnf install -y $packages
-        VALIDATION $? "installing $packages"
-    else
-        echo "$packages is already installed nothing to do"
-    fi
+# for packages in $@
+# do
+#     dnf list installed $packages
+#     if [ $? -ne 0 ]
+#     then
+#         echo "$packages not installed .. is started installing"
+#         dnf install -y $packages
+#         VALIDATION $? "installing $packages"
+#     else
+#         echo "$packages is already installed nothing to do"
+#     fi
 
-done
+# done
