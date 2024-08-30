@@ -25,24 +25,25 @@ fi
 VALIDATION(){
     if [ $1 -ne 0 ]
     then 
-        echo "$2 is..$R failed.. check the cmd $N"
+        echo "$2 is..$R failed.. check the cmd $N" &>> $LOG_FILES
     else
         echo "$2.. is installing $G"
     fi
 
 }
 
+echo "Running the script"
 
-# for packages in $@
-# do
-#     dnf list installed $packages
-#     if [ $? -ne 0 ]
-#     then
-#         echo "$packages not installed .. is started installing"
-#         dnf install -y $packages
-#         VALIDATION $? "installing $packages"
-#     else
-#         echo "$packages is already installed nothing to do"
-#     fi
+for packages in $@
+do
+    dnf list installed $packages &>> $LOG_FILES
+    if [ $? -ne 0 ]
+    then
+        echo "$packages not installed .. is started installing" &>> $LOG_FILES
+        dnf install -y $packages
+        VALIDATION $? "installing $packages"
+    else
+        echo "$packages is already installed nothing to do"&>> $LOG_FILES
+    fi
 
-# done
+done
