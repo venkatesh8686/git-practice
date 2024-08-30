@@ -34,6 +34,14 @@ VALIDATION(){
 for packages in $@
 do
     echo $packages
-    echo " this is line packages $?"
+    if [ $? -ne 0 ]
+    then
+        echo "$packges not installed .. is started installing"
+        dnf install -y $packages
+        VALIDATION $? "installing $packages"
+    else
+        echo "$packages is already installed nothing to do"
+    fi
+
 done
 
