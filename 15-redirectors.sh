@@ -17,7 +17,7 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-  echo "$R please run this script with root privallages" &>> $LOG_FILES
+  echo "please run this script with root privallages $R" &>> $LOG_FILES
   exit 1
 
 fi
