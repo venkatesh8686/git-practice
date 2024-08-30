@@ -3,7 +3,7 @@
 LOGS_FOLDER="/var/log/shell-scripting"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1) 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME/$TIMESTAMP.log"
+LOG_FILES="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER 
 
 
@@ -17,7 +17,7 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
-  echo "please run this script with root privallages $R" &>> $LOG_FILES
+  echo -e "$R please run this script with root privallages" &>> $LOG_FILES
   exit 1
 
 fi
@@ -43,7 +43,7 @@ do
         dnf install -y $packages
         VALIDATION $? "installing $packages"
     else
-        echo "$packages is already installed nothing to do"&>> $LOG_FILES
+        echo -e -"$packages is already installed nothing to do"&>> $LOG_FILES
     fi
 
 done
