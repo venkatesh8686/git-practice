@@ -12,6 +12,7 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 
 #echo "user id is : $USERID"
 
@@ -53,7 +54,7 @@ do
         dnf install -y $packages
         VALIDATION $? "installing $packages"
     else
-        echo -e "$R $packages is already installed nothing to do" | tee -a $LOG_FILES
+        echo -e "$Y $packages is already installed nothing to do" | tee -a $LOG_FILES
     fi
 
 done
