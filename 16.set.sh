@@ -2,12 +2,12 @@
 
 set -e
 
-failuer(){
+failure(){
     echo "Failed at: $1:$2"
 
 }
 
-trap 'failuer "${LINENO}" "$BASH_COMMAND" '
+trap 'failure "${LINENO}" "$BASH_COMMAND" '
 
 echo "hi venki keep goign"
 echhhh "hello world"
