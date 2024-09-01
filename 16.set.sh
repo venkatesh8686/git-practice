@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e 
 echo "hi venki keep goign"
 echhhh "hello world"
 echo "hii venki"
