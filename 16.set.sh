@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 failuer(){
     echo "Failed at: $1:$2"
