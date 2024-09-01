@@ -7,7 +7,7 @@ failure(){
 
 }
 
-trap 'failure "${LINENO}" "$BASH_COMMAND" '
+trap 'failure "${LINENO}" "$BASH_COMMAND"'
 
 echo "hi venki keep goign"
 echhhh "hello world"
