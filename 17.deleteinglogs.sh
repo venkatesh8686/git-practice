@@ -15,4 +15,4 @@ else
     exit 1
 fi
 FILES=$(fine $SOURCE_DRI -name "*.log" -mtime +14)
-echo "FILES:$FILES" 
+echo "FILES: $FILES" 
