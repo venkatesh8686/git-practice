@@ -16,8 +16,9 @@ else
 fi
 FILES=$(find $SOURCE_DRI -name "*.log" -mtime +14)
 echo "FILES: $FILES" 
-while IFS= read -r line 
+while IFS= read -r file 
 do
-    echo "Deleting line: $line"
-    rm -rf $line 
+    echo "Deleting file: $file"
+    rm -rf $file 
 done <<< $FILES
+
