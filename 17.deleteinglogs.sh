@@ -21,4 +21,3 @@ do
     echo "Deleting file: $file"
     rm -rf $file 
 done <<< $FILES
-
